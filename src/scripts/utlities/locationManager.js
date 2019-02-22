@@ -19,7 +19,7 @@ const LOCATIONS = {
     BUILDINTERESTCARD: (object, place) => {
         let string = `
         <div id="interest--${object.id}">
-            <h3 class="interestTitle">${object.name}</h3>
+            <h3 class="interestTitle" id="interestTitle--${object.id}">${object.name}</h3>
             <p class="interestDescription">${object.description}</p>
             <div class="interestLocation">${object.location}</div>
             <div class="interestReview" id="review--${object.id}"></div>

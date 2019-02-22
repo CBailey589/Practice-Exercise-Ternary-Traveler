@@ -30,7 +30,7 @@ function createHeader() {
         </div>
         <div id="doubleCheckDeleteSection" class="hidden">
             <input type="hidden" value="" id="idToDelete"
-            <h1 id="deleteHeader">Are you sure you want to DELETE this place of interest?</h1>
+            <h1 id="deleteHeader">Are you sure you want to REMOVE this place of interest?</h1>
             <div id="deleteInterestName"></div>
             <button id="cancelDelete">Cancel</button>
             <button id="delete">BE GONE!</button>
