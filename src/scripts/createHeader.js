@@ -3,7 +3,11 @@ import API from "./utlities/apiManager";
 
 function createHeader() {
     let string = `
-    <section id="pageHeader">
+    <section id="pageHeader"></section>
+    <section id="titleSection">
+        <div class="heroHeader">
+            <h1 class="heroTitle">Mira's Upcoming Travels</h1>
+        </div>
         <div id="newInterestSection">
             <div id="newInterestHeader">Want to add a new point of interest?</div>
             <button id="startNewInterest">Click Here!</button>
@@ -13,10 +17,10 @@ function createHeader() {
     printToDOM(string, "#output")
 
     string = `
-        <section id="alertStuff"
-            < div id = "newInterestForm" class="hidden" >
+        <section id="alertStuff">
+            <div id = "newInterestForm" class="hidden" >
                 <fieldset>
-                    <label for="interestPlace"></label>
+                    <label for="interestPlace">Which country is it in?</label>
                     <select name="interestPlace" id="interestPlace"></select>
                 </fieldset>
                 <fieldset>
@@ -47,7 +51,7 @@ function createHeader() {
     return API.GET("places")
         .then((res) => res.map(place => {
             let string = `
-        < option value = "${place.id}" > ${place.name}</option >
+            <option value = "${place.id}">${place.name}</option>
             `
             printToDOM(string, "#interestPlace")
         }))
