@@ -3,7 +3,7 @@ import printToDOM from "./printToDOM"
 const LOCATIONS = {
     BUILDPLACECARD: (object) => {
         let string = `
-        <section id="section--${object.name}">
+        <section id="section--${object.name}" class="placeSection">
             <div class="sectionHeader">
                 <a href="https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/${object.name}.html"class="sectionTitle" id="info--${object.name}">${object.name}</a>
                 <div id="visa--${object.name}" class="visaInfo"></div>
