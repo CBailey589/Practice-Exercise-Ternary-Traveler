@@ -46,16 +46,20 @@ function eventListeners() {
         }
         else if (event.target.id.startsWith("submitReview--")) {
             let id = parseInt(event.target.id.split("--")[1])
-            return API.GET(`interests/${id}`)
-                .then((res) => {
-                    let object = res
-                    object.review = document.querySelector(`#newReview--${id}`).value
-                    return object
-                })
-                .then((object) => {
-                    API.EDIT(`interests/${id}`, object)
-                })
-                .then(() => window.location.reload(false))
+            if (document.querySelector(`#newReview--${id}`).value !== "") {
+                return API.GET(`interests/${id}`)
+                    .then((res) => {
+                        let object = res
+                        object.review = document.querySelector(`#newReview--${id}`).value
+                        return object
+                    })
+                    .then((object) => {
+                        API.EDIT(`interests/${id}`, object)
+                    })
+                    .then(() => window.location.reload(false))
+            } else {
+                alert("Review FIeld Needs To Be Filled.")
+            }
         }
     })
 }
