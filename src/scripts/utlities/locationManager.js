@@ -1,4 +1,4 @@
-import printToDOM from "../utlities/printToDOM"
+import printToDOM from "./printToDOM"
 
 const LOCATIONS = {
     BUILDPLACECARD: (object) => {
@@ -33,9 +33,14 @@ const LOCATIONS = {
             document.querySelector(`#interest--${object.id}`).removeChild(document.querySelector(`#startReview--${object.id}`))
         }
     },
-    BUILDNEWINTEREST: () => {
-        
-
+    BUILDINTERESTOBJECT: () => {
+        let object = {}
+        object.placeId = document.querySelector("#interestPlace").value
+        object.name = document.querySelector("#interestName").value
+        object.location = document.querySelector("#interestLocation")
+        object.description = document.querySelector("#interestDescription").value
+        object.review = null
+        return object
     }
 }
 
