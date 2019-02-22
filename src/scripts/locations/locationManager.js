@@ -1,7 +1,7 @@
 import printToDOM from "../utlities/printToDOM"
 
 const LOCATIONS = {
-    BUILDPLACE: (object) => {
+    BUILDPLACECARD: (object) => {
         let string = `
         <section id="section--${object.name}">
             <div class="sectionHeader">
@@ -15,20 +15,27 @@ const LOCATIONS = {
         </section>
         `
         printToDOM(string, "#output")
-
     },
-    BUILDINTEREST: (object, place) => {
+    BUILDINTERESTCARD: (object, place) => {
         let string = `
         <div id="interest--${object.id}">
             <h3 class="interestTitle">${object.name}</h3>
             <p class="interestDescription">${object.description}</p>
             <div class="interestLocation">${object.location}</div>
-            <div class="interestReview hidden" id="review--${object.id}"></div>
-            <button id="startReview--${object.id}">Write Review</button>
+            <div class="interestReview" id="review--${object.id}"></div>
+            <button id="startReview--${object.id}" class="visible">Write Review</button>
             <button id="remove--${object.id}">Remove</button>
         </div>
         `
         printToDOM(string, `#interests--${place}`)
+        if (object.review !== null) {
+            printToDOM(object.review, `#review--${object.id}`)
+            document.querySelector(`#interest--${object.id}`).removeChild(document.querySelector(`#startReview--${object.id}`))
+        }
+    },
+    BUILDNEWINTEREST: () => {
+        
+
     }
 }
 

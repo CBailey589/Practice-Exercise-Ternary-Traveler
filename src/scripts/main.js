@@ -1,6 +1,8 @@
+import createHeader from "./utlities/createHeader"
 import API from "./utlities/apiManager"
 import LOCATIONS from "./locations/locationManager"
 
+createHeader()
 API.GET("places?_embed=interests")
     .then((res) => {
         console.log(res)
@@ -8,7 +10,7 @@ API.GET("places?_embed=interests")
     })
     .then((res) => {
         res.map(place => {
-            LOCATIONS.BUILDPLACE(place)
-            place.interests.map((interest) => LOCATIONS.BUILDINTEREST(interest, place.name))
+            LOCATIONS.BUILDPLACECARD(place)
+            place.interests.map((interest) => LOCATIONS.BUILDINTERESTCARD(interest, place.name))
         })
     })
