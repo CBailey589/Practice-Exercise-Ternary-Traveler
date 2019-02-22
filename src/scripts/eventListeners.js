@@ -8,7 +8,7 @@ function eventListeners() {
             let form = document.querySelector("#newInterestForm")
             form.classList.toggle("hidden")
             form.classList.toggle("prominent")
-            document.querySelector("body").classList.toggle("foggy")
+            document.querySelector("#output").classList.toggle("foggy")
         }
         else if (event.target.id === "submitNewInterest") {
             if (document.querySelector("#interestName").value !== "" && document.querySelector("#interestLocation").value !== "" && document.querySelector("#interestDescription").value !== "") {
@@ -27,7 +27,7 @@ function eventListeners() {
             if (form.classList.contains("hidden")) {
                 form.classList.toggle("hidden")
                 form.classList.toggle("prominent")
-                document.querySelector("body").classList.toggle("foggy")
+                document.querySelector("#output").classList.toggle("foggy")
             }
             let id = parseInt(event.target.id.split("--")[1])
             let name = document.querySelector(`#interestTitle--${id}`).textContent
