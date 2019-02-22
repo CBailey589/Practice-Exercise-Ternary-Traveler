@@ -15,6 +15,10 @@ const LOCATIONS = {
         </section>
         `
         printToDOM(string, "#output")
+        if (object.visa_required === true) {
+            let string = `Don't forget your travel visa for ${object.name}!`
+            printToDOM(string, `#visa--${object.name}`)
+        }
     },
     BUILDINTERESTCARD: (object, place) => {
         let string = `
@@ -23,6 +27,12 @@ const LOCATIONS = {
             <p class="interestDescription">${object.description}</p>
             <div class="interestLocation">${object.location}</div>
             <div class="interestReview" id="review--${object.id}"></div>
+            <section class="hidden" id="newReviewSection--${object.id}">
+                <label for="newReview--${object.id}"></label>
+                <textarea name="newReview--${object.id}" id="newReview--${object.id}" cols="30" rows="10" placeHolder="Enter a review of the place of interest here..."></textarea>
+                <button id="cancelReview">Cancel</button>
+                <button id="submitReview--${object.id}">Submit Review</button>
+            </section>
             <button id="startReview--${object.id}" class="visible">Write Review</button>
             <button id="remove--${object.id}">Remove</button>
         </div>
@@ -35,9 +45,9 @@ const LOCATIONS = {
     },
     BUILDINTERESTOBJECT: () => {
         let object = {}
-        object.placeId = document.querySelector("#interestPlace").value
+        object.placeId = parseInt(document.querySelector("#interestPlace").value)
         object.name = document.querySelector("#interestName").value
-        object.location = document.querySelector("#interestLocation")
+        object.location = document.querySelector("#interestLocation").value
         object.description = document.querySelector("#interestDescription").value
         object.review = null
         return object

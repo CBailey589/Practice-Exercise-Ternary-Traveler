@@ -14,11 +14,11 @@ function createHeader() {
                 <select name="interestPlace" id="interestPlace"></select>
             </fieldset>
             <fieldset>
-                <label for="interestName">Concepts Covered</label>
+                <label for="interestName">Name of Place of Interest:</label>
                 <input type="text" name="interestName" id="interestName">
             </fieldset>
             <fieldset>
-                <label for="interestLocation">Concepts Covered</label>
+                <label for="interestLocation">Location of Place of Interest:</label>
                 <input type="text" name="interestLocation" id="interestLocation">
             </fieldset>
             <fieldset>
