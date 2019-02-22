@@ -36,6 +36,7 @@ function eventListeners() {
         else if (event.target.id === "delete") {
             let id = parseInt(document.querySelector("#idToDelete").value)
             return API.DELETE(`interests/${id}`)
+                .then(() => alert("Your location of interest has been deleted"))
                 .then(() => window.location.reload(false))
         }
         else if (event.target.id.startsWith("startReview--")) {
