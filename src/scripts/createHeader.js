@@ -9,7 +9,7 @@ function createHeader() {
             <h1 class="heroTitle">Mira's Upcoming Travels</h1>
         </div>
         <div id="newInterestSection">
-            <div id="buttonText">Set a new place of interest</div>
+            <div id="buttonText">Set a new place of interest:</div>
             <input type="image" id="startNewInterest" src="./images/bluePushPin.png"></input>
         </div>
     </section>
