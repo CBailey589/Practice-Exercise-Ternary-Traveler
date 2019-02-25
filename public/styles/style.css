@@ -115,22 +115,54 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     position: fixed;
-    width: 650px;
-    height: 500px;
+    width: 700px;
+    height: 470px;
     top: 40%;
     left: 45%;
     margin-top: -100px;
     margin-left: -250px;
     z-index: 1;
     opacity: 0.99;
+    box-shadow: 15px 15px 10px rgb(169, 169, 169);
+    border-radius: 5px;
 }
-
+fieldset {
+    border: 0 none;
+}
 #interestPlace, #interestName, #interestLocation, #interestDescription{
     background-color: lightblue;
     font-size: .9em;
     color: rgb(135, 64, 0);
     font-weight: bold;
 }
+#interestDescription{
+    display: flex;
+    width: 100%;
+}
+#newInterestButtons{
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+
+}
+#newInterestButtonsSub{
+    /* border: 2px solid blue; */
+    display: flex;
+    width: 60%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#submitNewInterest, #cancelNewInterest{
+    background-color: rgb(212, 103, 5);
+    height: 50px;
+    width: 160px;
+    color: lightblue;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 
 .foggy {
     z-index: 0;
