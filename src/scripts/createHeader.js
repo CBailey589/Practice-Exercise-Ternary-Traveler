@@ -9,7 +9,7 @@ function createHeader() {
             <h1 class="heroTitle">Mira's Upcoming Travels</h1>
         </div>
         <div id="newInterestSection">
-            <div id="buttonText">Set a new place of interest</div>
+            <div id="buttonText">Set a new place of interest:</div>
             <input type="image" id="startNewInterest" src="./images/bluePushPin.png"></input>
         </div>
     </section>
@@ -35,8 +35,12 @@ function createHeader() {
                     <label for="interestDescription"></label>
                     <textarea name="interestDescription" id="interestDescription" cols="30" rows="10" placeHolder="Enter a description of the place of interest here..."></textarea>
                 </fieldset>
-                <button id="cancelNewInterest">Cancel</button>
-                <button id="submitNewInterest">Submit</button>
+                <section id="newInterestButtons">
+                    <section id="newInterestButtonsSub">
+                        <button id="cancelNewInterest">Cancel</button>
+                        <button id="submitNewInterest">Submit</button>
+                    </section>
+                </section>
             </div>
             <div id="doubleCheckDeleteSection" class="hidden">
                         <input type="hidden" value="" id="idToDelete"
